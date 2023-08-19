@@ -1,0 +1,159 @@
+main{
+  width: 100%;
+  display: flex;
+}
+
+.caja-registradora {
+  width: 77%;
+  padding: .5rem;
+}
+
+.opciones{
+  padding: .5rem;
+  width: 23%;
+}
+
+.opciones h2{
+  text-align: center;
+}
+
+.opciones button{
+  width: 100%;
+}
+
+.agrega-articulo{
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.barra-articulo{
+  z-index: 99;
+  display: flex;
+}
+
+.barra-articulo, .barra-titular{
+  flex:auto;
+  position: relative;
+}
+
+.barra-titular{
+  margin-top: .5rem;
+  display: flex;
+  z-index: 9;
+  width: 60%;
+}
+
+#input-articulo, #input-titular{
+  width:80%;
+}
+
+
+#lista-articulo, #lista-titular{
+  display: none;
+  position: absolute;
+  top:34px;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 6px #000;
+  /*color: #fff;*/
+  overflow-y: scroll;;
+  box-sizing: border-box;
+  max-height: 50Vh;
+  background: rgba(255,255,255,.9);
+}
+.articulo-resultado, .cliente-resultado{
+  padding: .5rem;
+  border-bottom:solid 1px #ccc;
+  cursor: pointer;
+}
+.articulo-resultado:hover, .cliente-resultado:hover{
+  background: rgba(50,50,255,1);
+  color: #fff;
+}
+
+.contenedor-datos{
+  display: flex;
+  flex-wrap: wrap;  
+}
+.contenedor-datos div{
+ width: 100%;
+}
+.contenedor-datos .dato-corto{
+ width: 50%;
+}
+
+.sin-resultados{
+  padding: .5rem;
+}
+#input-cantidad{
+  width: 80px;
+}
+
+.encabezado-factura {
+  padding: .5rem;
+  background-color: #333;
+  color: white;
+}
+
+#info-caja > div:first-child{
+  display: flex;
+}
+
+#logo-factura h1{
+  display: inline-block;
+}
+  
+#clockArea{
+  margin-left: auto;
+}
+.caja-registradora table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.caja-registradora th,
+.caja-registradora td {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.caja-registradora th {
+  background-color: #eee;
+}
+
+.caja-registradora #total {
+  font-weight: bold;
+}
+.factura{
+  box-shadow: 0 0 2px #000;
+}
+table#cinta-factura tbody > tr:nth-child(2n){
+  background: #eee;
+}
+.numerador{
+  width: 28px;
+  text-align: center;
+}
+table#cinta-factura tbody > tr > td:nth-child(3n){
+  width: 100px;
+  text-align: center;
+}
+.cantidad-item{
+  text-align: right;
+  width: 50px;
+}
+table#cinta-factura tbody > tr > td:nth-child(4n),
+table#cinta-factura tbody > tr > td:nth-child(5n),
+#total
+{
+  width: 100px;
+  text-align: right;
+}
+
+#pago-venta{
+  padding: .5rem;
+  width: -webkit-fill-available;
+}
+

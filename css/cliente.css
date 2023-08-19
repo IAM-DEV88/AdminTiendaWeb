@@ -1,0 +1,91 @@
+main{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#directorio, #opciones{
+	padding:.5rem;
+	box-sizing: border-box;
+}
+
+#directorio{
+	width: 77%;
+}
+#opciones{
+	width: 23%;
+}
+#opciones button{
+	width: 100%;
+}
+#directorio input, #directorio span{
+	margin-bottom: .5rem;
+}
+.barra-busqueda{
+	z-index: 99;
+	display: flex;
+}
+.barra-busqueda button{
+	margin-bottom: .5rem;
+}
+.barra-busqueda, #busca-cliente{
+	flex:auto;
+	position: relative;
+}
+#busca-cliente{
+	z-index: 33;
+}
+
+#seleccion-inventario, #seleccion-cliente{
+	padding: .5rem;
+	width:80%;
+	letter-spacing: 1px;
+}
+#lista-inventario, #lista-cliente{
+	display: none;
+  position: absolute;
+  top:34px;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 6px #000;
+  /*color: #fff;*/
+  overflow-y: scroll;;
+  box-sizing: border-box;
+  max-height: 50Vh;
+  background: rgba(255,255,255,.9);
+}
+.cliente-resultado{
+	padding: .5rem;
+  border-bottom:solid 1px #ccc;
+  cursor: pointer;
+}
+.cliente-resultado:hover{
+	background: rgba(50,50,255,1);
+  color: #fff;
+}
+.sin-resultados{
+	padding: .5rem;
+}
+
+#info-inventario, #info-cliente{
+	display: flex;
+	flex-wrap: wrap;
+}
+#usuario{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+#info-inventario>span, #info-cliente>span, #usuario>span{
+	width: 20%;
+	text-align: right;
+	padding-right: .5rem;
+	box-sizing: border-box;
+}
+#info-inventario>input, #info-cliente>input, #usuario>input{
+	width: 77%;
+}
+
+#info-cliente .corto, #usuario .corto{
+	width: 25%;
+	max-height: 33px;
+}

@@ -1,0 +1,140 @@
+main{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#inventario, #opciones{
+	padding:.5rem;
+	box-sizing: border-box;
+}
+
+#inventario{
+	width: 77%;
+}
+
+#opciones{
+	width: 23%;
+}
+#opciones button{
+  width: 100%;
+}
+
+#info-inventario input, #info-inventario span{
+	margin-bottom: .5rem;
+}
+.barra-busqueda{
+	margin-bottom: .5rem;
+	display: flex;
+	z-index: 99;
+}
+.barra-busqueda, #busca-proveedor{
+	flex:auto;
+	position: relative;
+}
+#busca-proveedor{
+	display: flex;
+	z-index: 33;
+}
+#busca-proveedor button{
+	margin-bottom: .5rem;
+}
+
+#seleccion-inventario, #seleccion-proveedor{
+	padding: .5rem;
+	width:80%;
+	letter-spacing: 1px;
+}
+#lista-inventario, #lista-proveedor{
+	display: none;
+  position: absolute;
+  top:34px;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 6px #000;
+  /*color: #fff;*/
+  overflow-y: scroll;;
+  box-sizing: border-box;
+  max-height: 50Vh;
+  background: rgba(255,255,255,.9);
+}
+.articulo-resultado, .proveedor-resultado{
+	padding: .5rem;
+  border-bottom:solid 1px #ccc;
+  cursor: pointer;
+}
+.articulo-resultado:hover, .proveedor-resultado:hover{
+	background: rgba(50,50,255,1);
+  color: #fff;
+}
+
+.contenedor-datos{
+  display: flex;
+  flex-wrap: wrap;  
+}
+.contenedor-datos div{
+ width: 100%;
+}
+.contenedor-datos .dato-corto{
+ width: 50%;
+}
+
+.sin-resultados{
+	padding: .5rem;
+}
+
+#info-inventario, #info-proveedor{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+#info-inventario>span, #info-proveedor>span{
+	width: 20%;
+	text-align: right;
+	padding-right: .5rem;
+	box-sizing: border-box;
+}
+#info-inventario>input, #info-proveedor>input{
+	width: 77%;
+}
+
+#info-inventario .corto{
+	width: 25%;
+}
+
+main table{
+	width: 100%;
+	margin: .5rem;
+  box-shadow: 0 0 2px #000;
+}
+
+main table th,
+main table td {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+main table th {
+  background-color: #eee;
+}
+
+main table #total {
+  font-weight: bold;
+}
+#cinta-inventario > tr:nth-child(2n){
+  background: #eee;
+}
+.numerador{
+  width: 28px;
+  text-align: center;
+}
+table#cinta-inventario tbody > tr > td:nth-child(3n){
+  width: 100px;
+  text-align: center;
+}
+.cantidad-item, #total-articulo, #total-valor, .subtotal, .valor
+{
+  width: 100px;
+  text-align: right;
+}
+
+

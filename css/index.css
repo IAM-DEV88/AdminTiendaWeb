@@ -1,0 +1,15 @@
+.login p{
+	text-align: justify;	
+}
+
+.login form{
+display:block;
+margin: 0 auto;
+width: 320px;	
+}
+
+.login input, .login button{
+	margin: 0 auto;
+	width: inherit;
+	box-sizing: border-box;
+}

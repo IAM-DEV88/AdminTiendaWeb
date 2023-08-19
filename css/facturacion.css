@@ -1,0 +1,120 @@
+main{
+  width: 100%;
+  display: flex;
+}
+
+.panel-facturacion {
+  width: 77%;
+  padding: .5rem;
+}
+
+.lateral-facturacion{
+  padding: .5rem;
+  width: 23%;
+}
+
+
+.encabezado-factura {
+  padding: .5rem;
+  background-color: #333;
+  color: white;
+}
+
+.info-caja > div:first-child{
+  display: flex;
+}
+
+#clockArea{
+  margin-left: auto;
+}
+
+.factura table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.factura th,
+.factura td {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.factura th {
+  background-color: #eee;
+}
+.factura #total {
+  font-weight: bold;
+}
+
+.factura{
+  box-shadow: 0 0 2px #000;
+}
+#cuerpo-factura > tr:nth-child(2n){
+  background: #eee;
+}
+.numerador{
+  width: 28px;
+  text-align: center;
+}
+#cuerpo-factura > tr > td:nth-child(4n){
+  width: 100px;
+  text-align: center;
+}
+.cantidad-item{
+  text-align: right;
+  width: 50px;
+}
+#cuerpo-factura > tr > td:nth-child(3n),
+#cuerpo-factura > tr > td:nth-child(5n),
+#cuerpo-factura > tr > td:nth-child(6n),
+#total
+{
+  width: 100px;
+  text-align: right;
+}
+
+#filtro-fecha{
+      font-size: 1.2rem;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+}
+
+.factura-resultado {
+  margin: .5rem auto;
+  padding: .5rem;
+  background-color: #333;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 2px #000;
+  cursor: pointer;
+  color: white;
+}
+.factura-resultado:hover{
+  background: rgba(50,50,255,1);
+}
+
+#opciones button{
+  width: 100%;
+  
+}
+
+.garantia{
+  display: flex;
+  flex-wrap: wrap;
+  padding: .5rem;
+  margin-bottom: .5rem;
+  box-shadow: 0 0 2px #000;
+}
+
+.garantia > span:nth-child(2n){
+  margin-left: auto;
+}
+
+.garantia textarea{
+  padding: .5rem;
+  width: 100%;
+  margin: .2rem 0 .2rem 0;
+  min-height: 50px;
+  box-sizing: border-box;
+}
