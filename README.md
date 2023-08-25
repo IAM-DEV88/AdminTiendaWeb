@@ -35,27 +35,25 @@ Este código es una solución versátil para la gestión de ventas, ya sea en l�
 ![AdminTiendaWebUI](https://i.ibb.co/9TrrSVy/Captura-de-pantalla-2023-08-25-125324.png)
 - Permite una gestión eficiente de los artículos en tu tienda o inventario.
     - Búsqueda en Tiempo Real: Los usuarios pueden buscar y seleccionar artículos de manera dinámica mientras escriben en el campo de búsqueda.
-    - Detalles de Artículos: Muestra información detallada de los artículos encontrados, incluyendo nombre, disponibilidad y valor.
-    - Control de Disponibilidad: Verifica la disponibilidad de los artículos y muestra advertencias si la cantidad seleccionada es mayor que la disponibilidad.
-    - Búsqueda de Artículos en el Inventario
-    - Los usuarios pueden buscar artículos en el inventario en tiempo real a medida que escriben en el campo de búsqueda. Los resultados de búsqueda se muestran en una lista desplegable debajo del campo de búsqueda e incluyen información relevante.
     - Cuando un usuario hace clic en un artículo en la lista de resultados de búsqueda, se selecciona ese artículo y se cargan sus detalles en el formulario de edición. Esto incluye nombre del artículo, código de barras, cantidad disponible, valor y detalles del proveedor si están disponibles.
     - Los usuarios pueden actualizar los detalles de un artículo seleccionado, como su nombre, código de barras, cantidad disponible y valor. Los cambios se pueden guardar haciendo clic en el botón "Actualizar".
     - Los usuarios pueden eliminar un artículo del inventario haciendo clic en el botón "Eliminar del inventario".
     - Los usuarios pueden agregar nuevos artículos al inventario completando los campos requeridos y haciendo clic en el botón "Guardar".
-    - Los datos del inventario se muestran en una tabla en la página web. Cada fila de la tabla representa un artículo del inventario y muestra información importante, como el número de artículo, nombre, cantidad disponible, valor, subtotal y una columna adicional denominada "extra".
-    - En la parte superior de la tabla de inventario, se muestra un resumen que incluye el valor total del inventario, calculado como la suma de los subtotales de todos los artículos.
+    - Los datos del inventario se muestran en una tabla en un enlace. Cada fila de la tabla representa un artículo del inventario y muestra información importante, como el número de artículo, nombre, cantidad disponible, valor y el subtotal.
 
 5. Gestión de Proveedores
-    - Proporciona una funcionalidad similar para buscar y seleccionar proveedores:
+    - Proporciona una funcionalidad similar para buscar y seleccionar proveedores para asignarlos a el articulo seleccionado
     - Detalles de Proveedores: Muestra detalles de los proveedores encontrados, incluyendo nombre, dirección, teléfono y correo electrónico.
     - Selección de Proveedor: Permite seleccionar un proveedor de la lista y muestra su información en un área dedicada.
 
-6. Gestión de Clientes
+6. Gestión de Clientes, Cajeros, Proveedores y Administradores
 ![AdminTiendaWebUI](https://i.ibb.co/HNKMZsY/Captura-de-pantalla-2023-08-25-125357.png)
 - Proporciona una funcionalidad similar para buscar y seleccionar clientes:
     - Detalles de Clientes: Muestra detalles de los clientes encontrados, incluyendo nombre, dirección, teléfono y correo electrónico.
     - Selección de Cliente: Permite seleccionar un cliente de la lista y muestra su información en un área dedicada.
+    - Los usuarios pueden actualizar los detalles de un cliente seleccionado. Los cambios se pueden guardar haciendo clic en el botón "Actualizar".
+    - Los usuarios pueden eliminar un cliente del directorio haciendo clic en el botón "Eliminar del directorio".
+    - Los usuarios pueden agregar nuevos clientes al directorio completando los campos requeridos y haciendo clic en el botón "Guardar".
 
 4. Barra de Estado
 ![AdminTiendaWebUI](https://i.ibb.co/58w5VwN/Captura-de-pantalla-2023-08-25-125159.png)
