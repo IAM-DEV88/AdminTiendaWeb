@@ -26,7 +26,7 @@ Este código es una solución versátil para la gestión de ventas, ya sea en l�
 - Lista de Productos: Los productos vendidos en la factura se muestran en una tabla con detalles como nombre del producto, cantidad, valor unitario y valor total. Además, se permite la anulación de productos.
 - Cálculos Automáticos: El código calcula automáticamente el total de la factura, considerando las cantidades anuladas.
 
-## Gestión de Garantías
+### Gestión de Garantías
 - Si hay garantías asociadas a la factura, se manejan en una sección separada:
 - Detalles de Garantía: Muestra la fecha de inicio de la garantía, el estado actual y la capacidad de agregar detalles a la garantía (si no está cerrada).
 - Operaciones: Las garantías se pueden cerrar, eliminar y actualizar con nuevos detalles según sea necesario.
