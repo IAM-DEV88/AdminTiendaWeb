@@ -7,9 +7,11 @@ $guarda = "UPDATE cliente SET ".$actualiza." WHERE id='".$cliente['id']."'";
 $query = $pdo->prepare($guarda);
 $query->execute();
 
-if ($_POST['habilita']) {
+$msgSalida = "La informacion ha sido actualizada.";
+
+if ($_POST['habilita']===true) {
 	if ($cliente['nickname']!="" & $cliente['contrasena']!="") {
-		$buscaUsuario = "SELECT usuario FROM sesion WHERE usuario='".$cliente['nickname']."'";
+		$buscaUsuario = "SELECT usuario FROM sesion WHERE id='".$_POST['usuario']."'";
 		$query = $pdo->prepare($buscaUsuario);
 		$query->execute();
 		$usuario = $query->fetch();
@@ -29,17 +31,27 @@ if ($_POST['habilita']) {
 			$habilitaUsuario = "UPDATE cliente SET usuario=".$ID['id']." WHERE id='".$cliente['id']."'";
 			$query = $pdo->prepare($habilitaUsuario);
 			$query->execute();
-			echo "Usuario habilitado correctamente.";
-		}else{
-			echo "Para continuar utilice un nombre de usuario diferente.";
-			exit();
-		}if($usuario!=false & $_POST['usuario']!=""){
-			$actualiza = "`usuario`='".$cliente['nickname']."',`contrasena`='".md5($cliente['contrasena'])."'";
-			$guarda = "UPDATE sesion SET ".$actualiza." WHERE id='".$usuario['usuario']."'";
+			$msgSalida = "Usuario habilitado correctamente.";
+		}elseif($usuario==true & $_POST['usuario']!=""){
+			$comparaClave = "SELECT contrasena FROM sesion WHERE id='".$_POST['usuario']."'";
+			$query = $pdo->prepare($comparaClave);
+			$query->execute();
+			$actual = $query->fetch();
+			$nuevaContrasena = "";
+			if ($cliente['contrasena']!=$actual['contrasena']) {
+				$nuevaContrasena = ",`contrasena`='".md5($cliente['contrasena'])."'";
+			}
+			$actualiza = "`usuario`='".$cliente['nickname']."'".$nuevaContrasena;
+			$guarda = "UPDATE sesion SET ".$actualiza." WHERE id='".$_POST['usuario']."'";
 			$query = $pdo->prepare($guarda);
 			$query->execute();
-			echo "La informacion ha sido actualizada.";
+			$msgSalida = "La informacion ha sido actualizada.";
+		}else{
+			$msgSalida = $usuario."Para continuar utilice un nombre de usuario diferente.";
+			exit();
 		}
 	}
 }
+
+echo $msgSalida;
 ?>

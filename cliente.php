@@ -6,13 +6,13 @@ if (isset($_SESSION['usuario'])) {
   <!DOCTYPE html>
   <html>
   <head>
-    <title>Clientes</title>
+    <title><?php if (isset($_GET['nuevo'])) {echo "Nuevo Cliente";}else{echo "Clientes";}?></title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/cliente.css">
   </head>
   <body>
     <header>
-      <h1>Arctic</h1>
+      <h1>Administrador de Tienda Web</h1>
     </header>
     <nav id="nav-principal">
       <ul>
@@ -59,7 +59,7 @@ if (isset($_SESSION['usuario'])) {
                   if (selectorCliente.length==0) {
                     output += "<div class='sin-resultados'>";
                     output += "<div class='contenedor-datos'>";
-                    output += "Ninguna coincidencia para '"+selectorCliente.filtro+"', ¿desea <a href='cliente.php?nuevo="+selectorCliente.filtro+"'>crear nuevo cliente</a>&nbsp;con esta informacion?";
+                    output += "Ninguna coincidencia para '"+selectorCliente.filtro+"', ¿desea <a href='cliente.php?nuevo="+selectorCliente.filtro+"' target='_blank'>crear nuevo cliente</a>&nbsp;con esta informacion?";
                     output += "</div>";
                     listaCliente.innerHTML=output;
                   }else{
@@ -88,10 +88,10 @@ if (isset($_SESSION['usuario'])) {
                         document.querySelector("#inputNacimiento").value=selectorCliente.nacimiento;
                         if(selectorCliente.vinculo==="Administrador" || selectorCliente.vinculo==="Cajero"){
                           let output="";
-                          output+="<span>Usuario:</span><input class='corto' id='inputUsuario' placeholder='Nombre de usuario...' type='text'>";
-                          output+="<span>Contraseña:</span><input class='corto' id='inputContrasena' placeholder='Contraseña...' type='password'>";
+                          output+="<span>Usuario:</span><input class='corto' id='inputUsuario' autocomplete='new-password' placeholder='Nuevo usuario...' type='text'>";
+                          output+="<span>Contraseña:</span><input class='corto' id='inputContrasena' autocomplete='new-password' placeholder='Nueva contraseña...' type='password'>";
                           document.querySelector("#usuario").innerHTML=output;
-                          document.querySelector("#inputUsuario").value=selectorCliente.usuario;
+                          document.querySelector("#inputUsuario").value=selectorCliente.nickname;
                           document.querySelector("#inputContrasena").value=selectorCliente.contrasena;
                         }else{
                           document.querySelector("#usuario").innerHTML="";
@@ -163,7 +163,7 @@ if (isset($_SESSION['usuario'])) {
  </main>
  <footer>
   <div id="barra-estado"></div>
-  <div class="copyright"><span>Copyright &copy; 2023 Arctic</span></div>
+  <div class="copyright"><span>Copyright &copy; 2023 IAM-DEV88</span></div>
 </footer>
 
 <script src="js/cliente.js"></script>

@@ -9,5 +9,5 @@ function barraEstado(msg){
 			elemento[i].classList.remove("fundido");
 			elemento[i].remove();
 		}
-	},4000);
+	},40000);
 }

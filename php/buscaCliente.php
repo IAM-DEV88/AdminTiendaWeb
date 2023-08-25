@@ -11,13 +11,22 @@ $query->execute();
 $resultado = $query->fetchAll();
 
 for ($i=0; $i < count($resultado); $i++) { 
-	if ($resultado[$i]['vinculo']==="Administrador" OR $resultado[$i]['vinculo']==="Cajero" AND $resultado[$i]['usuario']!="") {
+	if ($resultado[$i]['vinculo']==="Administrador" OR $resultado[$i]['vinculo']==="Cajero" AND $resultado[$i]['usuario']!=0) {
 		$sqlAdmin = "SELECT * FROM sesion WHERE id='".$resultado[$i]['usuario']."'";
 		$query = $pdo->prepare($sqlAdmin);
 		$query->execute();
 		$resultado2 = $query->fetch();
-		$resultado[$i]['usuario'] = $resultado2['usuario'];
-		$resultado[$i]['contrasena'] = $resultado2['contrasena'];
+		
+		if (is_array($resultado2)) {
+			$resultado[$i]['nickname'] = isset($resultado2['usuario']) ? $resultado2['usuario'] : "";
+			$resultado[$i]['contrasena'] = isset($resultado2['contrasena']) ? $resultado2['contrasena'] : "";
+		} else {
+			$resultado[$i]['nickname'] = "";
+			$resultado[$i]['contrasena'] = "";
+		}	
+		
+		
+		
 	}
 }
 

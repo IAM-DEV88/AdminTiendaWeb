@@ -50,7 +50,7 @@ function muestraLista(selector, tipo){
 	if (!selector.length) {
 		output += "<div class='sin-resultados'>";
 		output += "<div class='contenedor-datos'>";
-		output += "Ninguna coincidencia para '"+selector.filtro+"', ¿desea <a href='"+tipo+".php?nuevo="+selector.filtro+"'>crear nuevo "+tipo+"</a>&nbsp;con esta informacion?";
+		output += "Ninguna coincidencia para '"+selector.filtro+"', ¿desea&nbsp;<a href='"+tipo+".php?nuevo="+selector.filtro+"' target='_blank'>crear nuevo "+tipo+"</a>&nbsp;con esta informacion?";
 		output += "</div>";
 	} 
 	switch (tipo) {

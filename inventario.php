@@ -6,13 +6,13 @@ if (isset($_SESSION['usuario'])) {
   <!DOCTYPE html>
   <html>
   <head>
-    <title>Inventario</title>
+    <title><?php if (isset($_GET['nuevo'])) {echo "Nuevo Inventario";}else{echo "Inventario";}?></title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/inventario.css">
   </head>
   <body>
     <header>
-      <h1>Arctic</h1>
+      <h1>Administrador de Tienda Web</h1>
     </header>
     <nav id="nav-principal">
       <ul>
@@ -124,7 +124,7 @@ if (isset($_SESSION['usuario'])) {
  </main>
  <footer>
   <div id="barra-estado"></div>
-  <div class="copyright"><span>Copyright &copy; 2023 Arctic</span></div>
+  <div class="copyright"><span>Copyright &copy; 2023 IAM-DEV88</span></div>
 </footer>
 
 <script src="js/inventario.js"></script>

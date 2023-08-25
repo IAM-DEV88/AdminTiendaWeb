@@ -85,8 +85,11 @@ function actualiza(){
 		habilitaUsuario=true;
 		cliente.nickname = document.getElementById("inputUsuario").value;
 		cliente.contrasena = document.getElementById("inputContrasena").value;
-	}else{
-		habilitaUsuario=false;
+		if(cliente.nickname=="" || cliente.contrasena==""){
+			delete cliente.nickname;
+			delete cliente.contrasena;
+			habilitaUsuario=false;
+		}
 	}
 	if (campoCompleto(cliente)) {
 		let confirma=confirm("¿Continuar y guardar cambios?");
@@ -101,11 +104,13 @@ function actualiza(){
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState == XMLHttpRequest.DONE) { 
 					if (xmlhttp.status == 200) {
-						barraEstado(xmlhttp.response);
+						barraEstado(xmlhttp.response+" Recarga inminente...");
+						setInterval(function(){
+							recarga();
+						},4000);
 					}
 				}
 			};
-			// recarga();
 		}
 	}
 }
@@ -121,7 +126,16 @@ function elimina(){
 		xmlhttp.open("POST", "php/eliminaCliente.php", true);
 		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
 		xmlhttp.send(queryString);
-		recarga();	
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == XMLHttpRequest.DONE) { 
+				if (xmlhttp.status == 200) {
+					barraEstado("El "+cliente.vinculo+" ha sido eliminado, recarga inminente");
+					setInterval(function(){
+						recarga();
+					},4000);
+				}
+			}
+		};	
 	} 
 }
 
@@ -143,8 +157,10 @@ function guarda(){
 			xmlhttp.open("POST", "php/nuevoCliente.php", true);
 			xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
 			xmlhttp.send(queryString);
-			
-			recarga();
+			barraEstado("La informacion del nuevo "+cliente.vinculo+" ha sido almacenada, sera redireccionado");
+			setInterval(function(){
+				window.close();
+			},4000);
 		}
 	}
 }

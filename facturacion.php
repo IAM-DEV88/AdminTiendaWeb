@@ -12,7 +12,7 @@ if (isset($_SESSION['usuario'])) {
   </head>
   <body>
     <header>
-      <h1>Arctic</h1>
+      <h1>Administrador de Tienda Web</h1>
     </header>
     <nav id="nav-principal">
       <ul>
@@ -28,17 +28,17 @@ if (isset($_SESSION['usuario'])) {
         <div class="factura">
           <div class="encabezado-factura">
             <div class="info-caja">
-              <div>
+            <div>
                 <span class="logo-factura">
-                  <h1>Tramitaciones</h1>
+                  <h1>Nombre del Negocio</h1>
                 </span>
                 <span id="clockArea">
-                  
+                  <span id="hoy"></span> / <span id="hr"></span><span id="min"></span><span id="secs"></span>
                 </span>
               </div>
-              <div>Nit. <span>1144035525-1</span></div>
-              <div>Direccion: <span>Calle 2 # 4-09</span></div>
-              <div>Telefono: <span>316 681 6657</span></div>
+              <div>Nit. <span>9984013725-1</span></div>
+              <div>Direccion: <span>Carrera 17b # 14-109</span></div>
+              <div>Telefono: <span>160 625 3153</span></div>
               <div>Cajero: <span id="cajero">**** **** **** *</span></div>
             </div>
             <div id="info-cliente"></div>
@@ -87,7 +87,7 @@ if (isset($_SESSION['usuario'])) {
     </main>
     <footer>
       <div id="barra-estado"></div>
-      <div class="copyright"><span>Copyright &copy; 2023 Arctic</span></div>
+      <div class="copyright"><span>Copyright &copy; 2023 IAM-DEV88</span></div>
     </footer>
     <script src="js/facturacion.js"></script>
   </body>

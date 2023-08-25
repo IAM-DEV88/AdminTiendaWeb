@@ -60,7 +60,7 @@ function muestraLista(selector, tipo){
 	if (!selector.length) {
 		output += "<div class='sin-resultados'>";
 		output += "<div class='contenedor-datos'>";
-		output += "Ninguna coincidencia para '"+selector.filtro+"', ¿desea <a href='"+tipo+".php?nuevo="+selector.filtro+"'>crear nuevo "+tipo+"</a>&nbsp;con esta informacion?";
+		output += "Ninguna coincidencia para '"+selector.filtro+"', ¿desea&nbsp;<a href='"+tipo+".php?nuevo="+selector.filtro+"' target='_blank'>crear nuevo "+tipo+"</a>&nbsp;con esta informacion?";
 		output += "</div>";
 	}
 	switch (tipo) {
@@ -141,7 +141,10 @@ function actualiza(){
 			xmlhttp.open("POST", "php/actualizaInventario.php", true);
 			xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
 			xmlhttp.send(queryString);
-			recarga();
+			barraEstado("El articulo ha sido actualizado, recarga inminente");
+			setInterval(function(){
+				recarga();
+			},4000);
 		}
 	}
 }
@@ -156,7 +159,10 @@ function elimina(){
 		xmlhttp.open("POST", "php/eliminaArticulo.php", true);
 		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
 		xmlhttp.send(queryString);
-		recarga();
+		barraEstado("El articulo ha sido eliminado, recarga inminente");
+			setInterval(function(){
+				recarga();
+			},4000);
 	} 
 }
 
@@ -176,7 +182,10 @@ function guarda(){
 			xmlhttp.open("POST", "php/nuevoInventario.php", true);
 			xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
 			xmlhttp.send(queryString);
-			recarga();
+			barraEstado("La informacion del nuevo articulo ha sido almacenada, sera redireccionado");
+			setInterval(function(){
+				window.close();
+			},4000);
 		}
 	}
 }
