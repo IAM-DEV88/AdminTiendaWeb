@@ -1,5 +1,5 @@
 # Administrador de Tienda Web
-![AdminTiendaWebUI](https://ibb.co/25fHntK)
+![AdminTiendaWebUI](https://i.ibb.co/yVb7fys/Captura-de-pantalla-2023-08-25-115824.png)
 Este código es una solución versátil para la gestión de ventas, ya sea en línea o en un punto de venta físico. Puede personalizarse para adaptarse a las necesidades específicas de tu negocio. A continuación, se detallan las características clave de esta aplicación:
 
 # Caracteristicas principales
